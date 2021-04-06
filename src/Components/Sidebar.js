@@ -12,7 +12,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import PersonIcon from '@material-ui/icons/Person';
 import DuoIcon from '@material-ui/icons/Duo';
-import PhoneIcon from '@material-ui/icons/Phone';
 import { Phone } from '@material-ui/icons';
 
 
@@ -44,6 +43,7 @@ function Sidebar() {
                 </IconButton>
                 </div>
             </div>
+
         </div>
     )
 }

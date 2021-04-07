@@ -60,6 +60,7 @@ function EmailList() {
 
             <div className="emailList__list">
                 <EmailRow title="Twitch" subject="Hello genius" description="This is a test" time="10:00pm"/>
+                <EmailRow title="Facebook" subject="Hello genius" description="This is a test" time="10:00pm"/>
                 
             </div>
 

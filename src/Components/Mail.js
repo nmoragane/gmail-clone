@@ -1,15 +1,18 @@
 import { IconButton } from '@material-ui/core';
-import { ArrowBack, CheckCircle, Delete, Email, Error, LabelImportant, MoreVert, MoveToInbox, WatchLater } from '@material-ui/icons';
+import { ArrowBack, CheckCircle, Delete, Email, Error, ExitToApp, LabelImportant, MoreVert, MoveToInbox, Print, UnfoldMore, WatchLater } from '@material-ui/icons';
 import React from 'react';
+import { useHistory } from 'react-router';
 import '../Styles/Mail.css';
 
 
 function Mail() {
+    const history = useHistory();
+
     return (
         <div className="mail">
             <div className="mail__tools">
                 <div className="mail__toolsLeft">
-                    <IconButton>
+                    <IconButton onClick={()=>history.push('/')}>
                         <ArrowBack/>
                     </IconButton>
                     <IconButton>
@@ -37,8 +40,30 @@ function Mail() {
                         <MoreVert/>
                     </IconButton>
                 </div>
-                <div className="mail__toolsRight">
 
+                <div className="mail__toolsRight">
+                    <IconButton>
+                        <UnfoldMore/>
+                    </IconButton>
+                    <IconButton>
+                        <Print/>
+                    </IconButton>
+                    <IconButton>
+                        <ExitToApp/>
+                    </IconButton>
+                </div>
+            </div>
+
+            <div className="mail__body">
+                <div className="mail__bodyHeader">
+                    <h2>Subject</h2>
+                    <LabelImportant className="mail__important"/>
+                    <p>Title</p>
+                    <p className='mail__time'>10:00pm</p>
+                </div>
+
+                <div className="mail__message">
+                    <p>This is a message</p>
                 </div>
             </div>
         </div>

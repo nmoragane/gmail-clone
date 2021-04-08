@@ -13,6 +13,7 @@ import {
 
 import Mail from './Components/Mail';
 import EmailList from './Components/EmailList';
+import SendMail from './Components/SendMail';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           </Switch>
 
         </div>
+
+        <SendMail/>
       </div>
     </Router>
   );

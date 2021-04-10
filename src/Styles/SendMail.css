@@ -48,5 +48,13 @@
 
 .sendmail__message {
   flex: 1;
-  height: 100% !important;
+  height: 35% !important;
+}
+
+.sendmail__error {
+  color: red;
+  text-align: right;
+  background-color: white;
+  font-size: small;
+  padding-right: 10px;
 }

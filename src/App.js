@@ -18,6 +18,7 @@ import{selectSendMessageIsOpen} from './features/mailSlice';
 import { useSelector } from 'react-redux';
 
 function App() {
+  //import from reducer eke error enawa.
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen)
 
 
@@ -41,7 +42,7 @@ function App() {
 
         </div>
 
-        <SendMail/>
+        {sendMessageIsOpen && <SendMail/>}
       </div>
     </Router>
   );

@@ -14,10 +14,14 @@ function EmailRow({id,title,subject,description,time}) {
 
     const openMail = () => {
         dispatch(selectMail({
-            id,title,subject,description,time
+            id,
+            title,
+            subject,
+            description,
+            time
         }));
 
-        history.push("/mail")
+        history.push("/mail");
     }
     
 

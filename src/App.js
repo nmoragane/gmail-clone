@@ -16,34 +16,42 @@ import EmailList from './Components/EmailList';
 import SendMail from './Components/SendMail';
 import{selectSendMessageIsOpen} from './features/mailSlice';
 import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
+import Login from './Components/Login';
 
 function App() {
   //import from reducer eke error enawa.
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen)
+  const user = userSelector(selectUser);
 
 
   return (
     <Router>
-      <div className="app">
-        <Header/>
 
-        <div className="app__body">
-          <Sidebar/>
+      {!user? (
+        <Login/>
+      ): (
+        <div className="app">
+          <Header/>
 
-          <Switch>
-            <Route path="/mail">
-              <Mail/>
-            </Route>
+          <div className="app__body">
+            <Sidebar/>
 
-            <Route path="/">
-              <EmailList/>
-            </Route>
-          </Switch>
+            <Switch>
+              <Route path="/mail">
+                <Mail/>
+              </Route>
 
+              <Route path="/">
+                <EmailList/>
+              </Route>
+            </Switch>
+
+          </div>
+
+          {sendMessageIsOpen && <SendMail/>}
         </div>
-
-        {sendMessageIsOpen && <SendMail/>}
-      </div>
+      )}
     </Router>
   );
 }
